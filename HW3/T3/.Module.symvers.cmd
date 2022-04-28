@@ -1,0 +1,1 @@
+cmd_/home/truestar/OS/HW3/T3/Module.symvers := sed 's/\.ko$$/\.o/' /home/truestar/OS/HW3/T3/modules.order | scripts/mod/modpost -m -a  -o /home/truestar/OS/HW3/T3/Module.symvers -e -i Module.symvers   -T -

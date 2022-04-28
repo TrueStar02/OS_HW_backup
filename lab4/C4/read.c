@@ -1,0 +1,18 @@
+#include "x86.h"
+void read_disk(void)
+{   
+	while((inb(0x1f7)&0xc0)!=0x40)
+        continue;
+    
+    outb(0x1f2,2);
+    outb(0x1f3,6);
+    outb(0x1f4,0);
+    outb(0x1f5,0);
+    outb(0x1f6,0xe0);
+    outb(0x1f7,0x20);
+
+    while((inb(0x1f7)&0xc0)!=0x40)
+        continue;
+
+    insw(0x1f0,(void *)(0x20000),512);
+}
