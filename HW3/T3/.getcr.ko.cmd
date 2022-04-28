@@ -1,1 +1,0 @@
-cmd_/home/truestar/OS/HW3/T3/getcr.ko := ld -r  -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/truestar/OS/HW3/T3/getcr.ko /home/truestar/OS/HW3/T3/getcr.o /home/truestar/OS/HW3/T3/getcr.mod.o;  true
