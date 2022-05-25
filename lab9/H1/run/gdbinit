@@ -1,0 +1,8 @@
+target remote:1234
+add-symbol-file ../build/kernel.o
+add-symbol-file ../build/sync.o
+add-symbol-file ../build/asm_utils.o
+add-symbol-file ../build/program.o
+add-symbol-file ../build/interrupt.o
+add-symbol-file ../build/syscall.o
+set disassembly-flavor intel

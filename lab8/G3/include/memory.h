@@ -1,0 +1,31 @@
+#ifndef MEMORY_H_
+#define MEMORY_H_
+
+#include "addrpool.h"
+
+class MemoryManager
+{  //0 pk 1 pu 2 vk 
+   private:
+        int totalMemory;
+        AddressPool kernelPhysical;
+        AddressPool userPhysical;
+        AddressPool kernelVirtual;
+
+    public:
+        MemoryManager();
+        void initialize();
+        int allocatePhysicalPages(int type, const int count);
+        void releasePhysicalPages(int type, const int startAddress, const int count);
+        int getTotalMemory();
+        void openPageMechanism();
+        int allocatePages(int type, const int count);
+        int allocateVirtualPages(int type, const int count);
+        bool connectPhysicalVirtualPage(const int virtualAddress, const int physicalPageAddress);
+        int toPDE(const int virtualAddress);
+        int toPTE(const int virtualAddress);
+        void releasePages(int type, const int virtualAddress, const int count); 
+        int vaddr2paddr(int vaddr);
+        void releaseVirtualPages(int type, const int vaddr, const int count);
+};
+
+#endif
